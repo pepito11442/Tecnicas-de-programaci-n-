@@ -1,4 +1,5 @@
 import Libreria.procesar as proc
+import Libreria.procesar as proc
 
 def submenu_estadisticas():
     while True:
@@ -8,13 +9,13 @@ def submenu_estadisticas():
         print("3. Ver solo jugadores destacados")
         print("4. Volver al menú principal")
 
-        try:
-            opcion = int(input("Seleccione una opción: "))
-            if opcion == 1:
+        opcion = int(input("Seleccione una opción: "))
+        match opcion:
+            case 1:
                 print("\nConteo total de jugadores:")
                 print(f"Mujeres: {proc.contFem}")
                 print(f"Hombres: {proc.contMasc}")
-            elif opcion == 2:
+            case 2:
                 print("\nEstadísticas por jugador:")
                 for i, jugador in enumerate(proc.datos_de_jugador, start=1):
                     nombre = jugador["nombre"]
@@ -24,7 +25,7 @@ def submenu_estadisticas():
                     promedio = total / niveles if niveles > 0 else 0
                     destacado = "DESTACADO" if jugador["destacado"] else ""
                     print(f"Jugador {i}. {nombre} - Niveles: {niveles}, Total: {total}, Promedio: {promedio:.2f} {destacado}")
-            elif opcion == 3:
+            case 3:
                 print("\nJugadores DESTACADOS (más de 2000 puntos):")
                 destacados = [j for j in proc.datos_de_jugador if j["destacado"]]
                 if destacados:
@@ -37,9 +38,7 @@ def submenu_estadisticas():
                         print(f"Jugador {i}. {nombre} - Niveles: {niveles}, Total: {total}, Promedio: {promedio:.2f} DESTACADO")
                 else:
                     print("Ningún jugador ha destacado")
-            elif opcion == 4:
+            case 4:
                 break
-            else:
-                print("Opción inválida.")
-        except ValueError:
-            print("Ingrese un número válido")
+            case _:
+                print("Opcion invalida")
