@@ -32,9 +32,9 @@ def jugar():
                     print(f"¡Ganaste el combate! +{puntos_nivel} puntos")
                     niveles_superados += 1
                 elif accion == "A" and puntos_nivel == 0:
-                    print("¡Fallaste el ataque! No ganaste puntos.")
+                    print("Fallaste el ataque. No ganaste puntos.")
                 else:
-                    print("Escapaste del peligro. No ganaste puntos.")
+                    print("Escapaste del peligro. No ganaste puntos")
             else:
                 print("Acción inválida. Perdiste el turno.")
 
