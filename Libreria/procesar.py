@@ -1,19 +1,22 @@
 contMasc = 0
 contFem = 0
 datos_de_jugador = []
-
 def procesar():
     global contMasc, contFem, datos_de_jugador
     while True:
-        jugadores = int(input("\nIngrese cantidad de jugadores:\t\t"))
-        if jugadores <= 0:
-            print("Ingrese al menos un jugador.")
-        else:
-            break
-
+        try:
+            jugadores = int(input("\nIngrese cantidad de jugadores:\t\t"))
+            if jugadores <= 0:
+                print("Ingrese al menos un jugador. La cantidad debe ser mayor a 0.")
+            else:
+                break
+        except ValueError:
+            print("Entrada inválida. Por favor, ingrese un número entero para la cantidad de jugadores.")
     for i in range(jugadores):
+        print(f"\n--- Datos del Jugador {i + 1} ---")
+
         while True:
-            genero = input(f"Ingrese género del jugador {i+1} (H/M): ").upper()
+            genero = input(f"Ingrese género del jugador {i + 1} (H/M): ").upper()
             if genero in ['H', 'M']:
                 break
             else:
@@ -24,11 +27,9 @@ def procesar():
         else:
             contFem += 1
 
-        nombre = input(f"Ingrese nombre del jugador {i+1}:\t")
-
+        nombre = input(f"Ingrese nombre del jugador {i + 1}:\t")
         niveles = 0
         puntajes = []
-
         jugador = {
             "nombre": nombre,
             "genero": genero,
