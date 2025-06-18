@@ -16,6 +16,11 @@ def menu():
             return int(op)
         else:
             print("ERROR. Opción inválida.")
+            print("\n=========== MENÚ DE OPCIONES ===========\n")
+            print("1. Procesar jugadores")
+            print("2. Mostrar estadísticas")
+            print("3. Iniciar juego")
+            print("4. Salir")
 
 def ejecutar():
     while True:
