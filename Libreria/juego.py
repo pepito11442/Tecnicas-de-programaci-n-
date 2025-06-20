@@ -16,7 +16,7 @@ def animacion(nivel_actual):
 
     for i in range(30):
         camino = "─" * i + ">"
-        print("\r" + camino, end="", flush=True)
+        print("\r" + camino, end="")
         time.sleep(0.03)
 
     print("\n Pasando al siguiente nivel, espere un segundo porfi :D\n")
