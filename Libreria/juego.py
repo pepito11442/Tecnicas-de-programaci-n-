@@ -12,15 +12,15 @@ puntajes_por_nivel = {
 def animacion(nivel_actual):
     siguiente_nivel = nivel_actual + 1
     print(f"\n Nivel {nivel_actual} => Nivel {siguiente_nivel}")
-    time.sleep(1)
+    time.sleep(0.3)
 
-    for i in range(30):
-        camino = "─" * i + ">"
+    for i in range(55):
+        camino = "-" * i + ">"
         print("\r" + camino, end="")
-        time.sleep(0.03)
+        time.sleep(0.025)
 
     print("\n Pasando al siguiente nivel, espere un segundo porfi :D\n")
-    time.sleep(1)
+    time.sleep(0.3)
 
 def jugar():
     if not proc.datos_de_jugador:
@@ -30,13 +30,13 @@ def jugar():
     print("\n===== COMIENZA LA AVENTURA =====")
 
     for jugador in proc.datos_de_jugador:
-        print(f"\nJuega {jugador['nombre']}")
+        print(f"\nTurno de {jugador['nombre']}")
         puntos = 0
         niveles_superados = 0
         acciones_usadas = set()
 
         for nivel in range(1, 6):
-            print(f"\n NIVEL {nivel} — Un enemigo aparece ")
+            print(f"\n NIVEL {nivel} Un enemigo aparece ")
 
             try:
                 accion = input("¿Qué haces? (A)taque o (E)vitar: ").strip().upper()
@@ -46,12 +46,16 @@ def jugar():
                     puntos += puntos_nivel
 
                     if accion == "A" and puntos_nivel > 0:
-                        print(f"Buena, Ganaste +{puntos_nivel} puntos")
+                        print(f"""
+                        Buena le ganaste al mounstruo
+                        Ganaste +{puntos_nivel} puntos""")
                         niveles_superados += 1
                     elif accion == "A":
                         print("Fallaste el ataque. No ganaste puntos.")
                     else:
-                        print("Evitaste y fuiste al siguiente nivel")
+                        print(f"""
+                        Evitaste y fuiste al siguiente nivel
+                        Pero pierdes {puntos_nivel} puntos """)
                 else:
                     print("Acción no valida. Perdiste el turno.")
             except:
