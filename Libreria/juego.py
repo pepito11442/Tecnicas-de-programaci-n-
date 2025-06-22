@@ -22,7 +22,6 @@ def animacion(nivel_actual):
     print("\n Pasando al siguiente nivel, espere un segundo porfi :D\n")
     time.sleep(1)
 
-# 🎮 Juego principal
 def jugar():
     if not proc.datos_de_jugador:
         print("\nPrimero debes procesar jugadores.")
