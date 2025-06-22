@@ -13,7 +13,7 @@ def procesar():
         except ValueError:
             print("Entrada inválida. Por favor, ingrese un número entero para la cantidad de jugadores.")
     for i in range(jugadores):
-        print(f"\n--- Datos del Jugador {i + 1} ---")
+        print(f"\n=== Datos del Jugador {i + 1} ===")
 
         while True:
             genero = input(f"Ingrese género del jugador {i + 1} (H/M): ").upper()
