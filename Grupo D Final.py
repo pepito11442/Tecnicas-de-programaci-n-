@@ -4,11 +4,21 @@ import Libreria.submenu as sub
 import Libreria.juego as juego
 
 def menu():
-    print("\n=========== MENÚ DE OPCIONES ===========\n")
-    print("1. Procesar jugadores")
-    print("2. Mostrar estadísticas")
-    print("3. Iniciar juego")
-    print("4. Salir")
+    print(r"""
+       //\\   \\      // ||==== ||\\   || ====== ||    || ||===||    //\\  
+      //  \\   \\    //  ||____ || \\  ||   ||   ||    || ||===||   //  \\ 
+     //====\\   \\  //   ||     ||  \\ ||   ||   ||    || ||  \\   //====\\   
+    //      \\   \\//    ||==== ||   \\||   ||   ||====|| ||   \\ //      \\
+                        
+                        ||==== ||==|| ==== //===   //\\
+                        ||--   ||__||  ||  ||     //__\\
+                        ||==== ||     ==== \\=== //    \\
+    """)
+    print("""\t\t\t\n=========== MENÚ DE OPCIONES ===========\n
+        1. Procesar jugadores
+        2. Mostrar estadísticas
+        3. Iniciar juego
+        4. Salir""")
 
     while True:
         op = input("Ingrese opción del menú: ")
@@ -16,11 +26,11 @@ def menu():
             return int(op)
         else:
             print("ERROR. Opción inválida.")
-            print("\n=========== MENÚ DE OPCIONES ===========\n")
-            print("1. Procesar jugadores")
-            print("2. Mostrar estadísticas")
-            print("3. Iniciar juego")
-            print("4. Salir")
+            print("""\t\t\t\n=========== MENÚ DE OPCIONES ===========\n
+                1. Procesar jugadores
+                2. Mostrar estadísticas
+                3. Iniciar juego
+                4. Salir""")
 
 def ejecutar():
     while True:
